@@ -1,0 +1,61 @@
+syntax = "proto3";
+option java_multiple_files = true;
+import "google/protobuf/empty.proto";
+
+option java_package = "com.bycrafter.core.usermanagement.proto";
+option java_outer_classname = "UserManagementProto";
+
+message UserRequest {
+  string name = 1;
+  string surname = 2;
+  string email = 3;
+  string phone = 4;
+  string password = 5;
+}
+
+message UpdateUserRequest {
+  string id = 1;
+  string name = 2;
+  string surname = 3;
+  string email = 4;
+  string phone = 5;
+  string password = 6;
+}
+
+message UserDetailRequest{
+  string id = 1;
+}
+
+message UserListResponse{
+  repeated UserResponse userDetail= 1;
+}
+
+message UserResponse {
+  string id = 1;
+  string name = 2;
+  string surname = 3;
+  string email = 4;
+  string phone = 5;
+  string password = 6;
+}
+
+message UserRoleRequest {
+  string userId = 1;
+  string roleId = 2;
+}
+message RoleRequest {
+  string name = 1;
+}
+
+
+service UserManagementService {
+  rpc getUsers(google.protobuf.Empty) returns (UserListResponse);
+  rpc getUser(UserDetailRequest) returns(UserResponse);
+  rpc addUser(UserRequest) returns(UserResponse);
+  rpc updateUser(UpdateUserRequest) returns(UserResponse);
+  rpc addRoleToUser(UserRoleRequest) returns(google.protobuf.Empty);
+}
+
+service RoleManagementService {
+  rpc addRole(RoleRequest) returns(google.protobuf.Empty);
+}
