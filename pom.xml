@@ -5,7 +5,7 @@
 
     <groupId>com.bycrafter.core</groupId>
     <artifactId>account-management-grpc-contract</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
@@ -34,15 +34,6 @@
             <version>${grpc.version}</version>
         </dependency>
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub bycrafter Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/bycrafter/account-management-grpc-contract</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <extensions>
             <extension>
@@ -73,4 +64,14 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub bycrafter Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/bycrafter/account-management-grpc-contract</url>
+        </repository>
+    </distributionManagement>
+
 </project>
