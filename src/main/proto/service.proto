@@ -57,8 +57,12 @@ message IdRequest {
 }
 
 message UserWithRolesResponse{
-  UserResponse user = 1;
-  repeated RoleResponse role = 2;
+  string id = 1;
+  string name = 2;
+  string surname = 3;
+  string email = 4;
+  string phone = 5;
+  repeated RoleResponse role = 6;
 }
 
 message UserRoleResponse {
